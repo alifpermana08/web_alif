@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portofolio Alif</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- NAVIGASI BAR -->
+<nav class="navbar">
+  <div class="logo">Muchamad Alif Permana<span style="color:#46474d;">.</span></div>
+  <ul class="nav-links">
+    <li><a href="#home">Beranda</a></li>
+    <li><a href="#about">Tentang Saya 🤓</a></li>
+    <li><a href="#Experience">Keahlian 🤓</a></li>
+  </ul>
+  <a href="#contact" class="btn contact">Contact Me</a> 
+</nav>
+
+<!-- HERO (TULISAN AWAL YANG MENJADI SOROTAN) -->
+<section id="home" class="hero">
+  <div class="hero-text">
+    <p class="greet">Hai, Disana!</p>
+    <h1>Saya <span class="highlight">Muchamad Alif Permana</span></h1>
+    <p class="desc">
+     lulusan SMK Bela Nusantara jurusan Teknik Komputer dan Jaringan (TKJ). Selain paham jaringan dan perakitan komputer, saya juga tertarik di dunia pemrograman. Saya mulai belajar dasar-dasar coding seperti HTML, CSS, dan JavaScript, serta memahami cara kerja website dari struktur sampai tampilannya. Saya senang eksplor teknologi baru dan terbiasa nyari solusi sendiri ketika ada error atau masalah teknis. Dengan dasar TKJ dan kemampuan coding yang terus berkembang, saya siap berkontribusi dalam proyek maupun pekerjaan yang membutuhkan ketelitian, logika, dan pemahaman teknis.
+    </p>
+    <div class="buttons">
+      <a href="" class="btn hire">Hire Me</a>
+      <a href="CV MUCHAMAD ALIF PERMANA.pdf" class="btn cv">Download CV</a>
+    </div>
+  </div>
+
+  <div class="hero-img">
+    <img src="foto berkas.jpg" alt="Foto Alif">
+  </div>
+</section>
+
+<!-- TENTANG SECTION DI ABOUTKU -->
+<section id="about" class="about animasi">
+  <h2>About Me</h2>
+  <h3 class="about-title">I am NewBie Developer</h3>
+  <ul class="about-info">
+    <li><strong>Experience :</strong> 1 Week</li>
+    <li><strong>Address :</strong> Cianjur, West Java , Warungkondang</li>
+    <li><strong>Email :</strong> liffnji@gmail.com</li>
+  </ul>
+</section>
+
+<!-- PENGALAMAN BERISI LOGIKA ANIMASI DAN PENGALAMAN KEBELET EEK -->
+<section id="Experience" class="experience animasi">
+  <h2>My Experience</h2>
+  <div class="experience-container">
+    <div class="experience-card">
+      <img src="download.gif" alt="GIF Minecraft Server" class="experience-img">
+      <h3 class="experience-title">Server Developer Minecraft</h3>
+      <p class="experience-desc">Saya pernah membuat server Minecraft dengan fitur custom plugin dan sistem manajemen pemain.</p>
+    </div>
+    <div class="experience-card">
+      <img src="Coding Pin.gif" alt="GIF Web Developer" class="experience-img">
+      <h3 class="experience-title">Web Developer</h3>
+      <p class="experience-desc">Saya mengembangkan website sederhana menggunakan HTML, CSS, dan JavaScript untuk latihan pribadi.</p>
+    </div>
+    <div class="experience-card">
+      <img src="kirokaze - Pixel art Gif.gif" alt="GIF Game Developer" class="experience-img">
+      <h3 class="experience-title">Service Komputer</h3>
+      <p class="experience-desc">Saya memiliki pengalaman dalam memperbaiki komputer, dan saya ingin terus mengembangkan kemampuan tersebut agar lebih profesional dan terpercaya.</p>
+    </div>
+  </div>
+</section>
+
+<!-- LOGIKA DARI CONTACT ME -->
+ <section id="contact">
+  <h2>Contact <span>Me</span></h2>
+  <input type="text" id="nama" placeholder="Your name">
+  <textarea id="pesan" placeholder="Write Message"></textarea>
+  <button id="send">Send Message</button> 
+</section>
+
+<script>
+document.getElementById("send").addEventListener("click", function() {
+    let nama = document.getElementById("nama").value;
+    let pesan = document.getElementById("pesan").value;
+
+    let nomor = "6285601532387"; // ganti nomor WA lo
+    let teks = `Halo, nama saya ${nama}%0A${pesan}`;
+
+    let url = `https://wa.me/${nomor}?text=${teks}`;
+
+    window.open(url, "_blank");
+});
+</script>
+
+
+
+<!-- CALL JAVA + LOGIKA ANIMASI TODD -->
+<script>
+  const navLinks = document.querySelectorAll('.nav-links a');
+  navLinks.forEach(link => {
+    link.addEventListener('click', function () {
+      navLinks.forEach(el => el.classList.remove('active'));
+      this.classList.add('active');
+    });
+  });
+</script>
+
+<script>
+  const reveals = document.querySelectorAll('.animasi');
+  window.addEventListener('scroll', () => {
+    reveals.forEach(item => {
+      const windowHeight = window.innerHeight;
+      const revealTop = item.getBoundingClientRect().top;
+      const revealPoint = 150;
+
+      if (revealTop < windowHeight - revealPoint) {
+        item.classList.add('active');
+      } else {
+        item.classList.remove('active')
+      }
+    });
+  });
+</script>
+
+</body>
+</html>
